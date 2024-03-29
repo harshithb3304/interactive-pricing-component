@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/src/assets/bg-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 50%; 
+  background-color: hsl(230, 100%, 99%);
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
