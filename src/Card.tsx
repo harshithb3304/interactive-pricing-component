@@ -11,8 +11,8 @@ const Card = () => {
     setSliderValue(value);
   };
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="p-8 bg-white rounded-xl mt-6 mb-6 shadow-md w-full max-w-[20rem] md:max-w-md lg:max-w-[45rem] xl:max-w-[45rem] transform transition-transform duration-500">
+    <div className="min-h-screen flex items-center justify-center p-4 ">
+      <div className="p-8 bg-white rounded-xl mt-6 mb-6 shadow-md w-full max-w-[20rem] md:max-w-md lg:max-w-[40rem] xl:max-w-[40rem] transform transition-transform duration-500">
         <div className="flex flex-col md:lg:flex-row justify-between items-center">
           <div className="text-[color:hsl(225,20%,60%)] font-semibold font-manrope">
             100K PAGEVIEWS
@@ -25,7 +25,7 @@ const Card = () => {
                 : sliderValue}
             </p>
             <p className="font-manrope font-semibold items-center justify-center ml-1 text-[color:hsl(225,20%,60%)]">
-              {enabled ? "/year" : "/month"}
+              {enabled ? "/ year" : "/ month"}
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Card = () => {
           <p className="text-[15px] text-[color:hsl(225,20%,60%)]">
             Yearly Billing
           </p>
-          <p className="text-[13px] text-[color:hsl(15,100%,70%)] bg-[color:hsl(14,92%,95%)] rounded-full px-3 py-1">
+          <p className="text-[13px] text-[color:hsl(15,100%,70%)] bg-[color:hsl(14,92%,95%)] rounded-full px-3 py-1 font-manrope font-bold">
             {discount}% Discount
           </p>
         </div>
@@ -64,7 +64,7 @@ const Card = () => {
         <div className="flex flex-col md lg xl:flex-row justify-between items-center">
           <div>
             <ul className="mt-6">
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope font-semibold">
+              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope ">
                 <img
                   src="/src/assets/icon-check.svg"
                   alt="Image 1"
@@ -72,7 +72,7 @@ const Card = () => {
                 />
                 Unlimited Website
               </li>
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope font-semibold">
+              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope ">
                 <img
                   src="/src/assets/icon-check.svg"
                   alt="Image 2"
@@ -80,7 +80,7 @@ const Card = () => {
                 />
                 100% data ownership
               </li>
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope font-semibold">
+              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope ">
                 <img
                   src="/src/assets/icon-check.svg"
                   alt="Image 3"
@@ -91,7 +91,7 @@ const Card = () => {
             </ul>
           </div>
           <div>
-            <button className="w-[200px] p-2 bg-[color:hsl(227,35%,25%)] text-[color:hsl(226,100%,87%)] rounded-full hover:ring-1 hover:ring-offset-1 lg:hover:bg-white lg:hover:text-black m-6">
+            <button className="w-[200px] font-bold px-2 py-5 bg-[color:hsl(227,35%,25%)] text-[color:hsl(226,100%,87%)] rounded-full hover:ring-1 hover:ring-offset-1 lg:hover:bg-white lg:hover:text-black m-6">
               Start my trial
             </button>
           </div>
