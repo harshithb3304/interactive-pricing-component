@@ -14,6 +14,3 @@ body {
   background-color: hsl(230, 100%, 99%);
 }
 
-.translate-x-full {
-  transform: translateX(100%);
-}
