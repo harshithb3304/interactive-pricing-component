@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Slider from "./Slider";
 import { Switch } from "@headlessui/react";
 
