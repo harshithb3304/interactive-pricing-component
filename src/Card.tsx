@@ -64,29 +64,53 @@ const Card = () => {
         <div className="flex flex-col md lg xl:flex-row justify-between items-center">
           <div>
             <ul className="mt-6">
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope ">
-                <img
-                  src="/src/assets/icon-check.svg"
-                  alt="Image 1"
-                  className="w-6 h-6 mr-2"
-                />
-                Unlimited Website
+              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  className="flex-shrink-0"
+                >
+                  <path
+                    fill="none"
+                    stroke="#10D8C4"
+                    strokeWidth="2"
+                    d="M1 4.134l1.907 1.908L7.949 1"
+                  />
+                </svg>
+                <span>Unlimited Website</span>
               </li>
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope ">
-                <img
-                  src="/src/assets/icon-check.svg"
-                  alt="Image 2"
-                  className="w-6 h-6 mr-2"
-                />
-                100% data ownership
+              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  className="flex-shrink-0"
+                >
+                  <path
+                    fill="none"
+                    stroke="#10D8C4"
+                    strokeWidth="2"
+                    d="M1 4.134l1.907 1.908L7.949 1"
+                  />
+                </svg>
+                <span>100% data ownership</span>
               </li>
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope ">
-                <img
-                  src="/src/assets/icon-check.svg"
-                  alt="Image 3"
-                  className="w-6 h-6 mr-2"
-                />
-                Email reports
+              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  className="flex-shrink-0"
+                >
+                  <path
+                    fill="none"
+                    stroke="#10D8C4"
+                    strokeWidth="2"
+                    d="M1 4.134l1.907 1.908L7.949 1"
+                  />
+                </svg>
+                <span>Email reports</span>
               </li>
             </ul>
           </div>
