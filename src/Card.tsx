@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Slider from "./Slider";
 import { Switch } from "@headlessui/react";
+import CheckmarkIcon from "./CheckmarkIcon";
 
 const Card = () => {
   const [sliderValue, setSliderValue] = useState<number>(50);
@@ -11,29 +12,30 @@ const Card = () => {
     setSliderValue(value);
   };
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="p-8 bg-white rounded-xl mt-6 mb-6 shadow-md w-full max-w-[20rem] md:max-w-md lg:max-w-[40rem] xl:max-w-[40rem] transform transition-transform duration-500">
-        <div className="flex flex-col md:lg:flex-row justify-between items-center">
-          <div className="text-[color:hsl(225,20%,60%)] font-semibold font-manrope">
+    <div className="mx-auto w-full max-w-screen-sm transform rounded-xl bg-white py-8 shadow-md transition-transform duration-500 dark:bg-gray-700 lg:py-12">
+      <div className="px-6 lg:px-12">
+        <div className="flex w-full flex-wrap items-center justify-center gap-10 lg:justify-between">
+          <div className="font-manrope font-semibold tracking-widest text-[color:hsl(225,20%,60%)] dark:text-gray-300">
             100K PAGEVIEWS
           </div>
-          <div className="flex items-center justify-center md:justify-start ">
-            <p className="text-4xl font-manrope font-bold">
+          <div className="order-3 flex items-center justify-center md:justify-start lg:order-2 ">
+            <p className="font-manrope text-4xl font-bold dark:text-white">
               $
               {enabled
                 ? sliderValue * 12 * ((100 - discount) / 100)
                 : sliderValue}
             </p>
-            <p className="font-manrope font-semibold items-center justify-center ml-1 text-[color:hsl(225,20%,60%)]">
+            <p className="ml-1 items-center justify-center font-manrope font-semibold text-[color:hsl(225,20%,60%)] dark:text-gray-300">
               {enabled ? "/ year" : "/ month"}
             </p>
           </div>
+
+          <div className="order-2  w-full lg:order-3">
+            <Slider value={sliderValue} onChange={handleSliderChange} />
+          </div>
         </div>
-        <div>
-          <Slider value={sliderValue} onChange={handleSliderChange} />
-        </div>
-        <div className="flex flex-row gap-3 mt-8 justify-end items-center mr-4">
-          <p className="text-[15px] text-[color:hsl(225,20%,60%)]">
+        <div className="mt-12 flex flex-row items-center justify-center gap-3 lg:mr-4 lg:justify-end">
+          <p className="flex-shrink-0 text-[15px] text-[color:hsl(225,20%,60%)] dark:text-gray-300">
             Monthly Billing
           </p>
           <div className="md:flex">
@@ -44,7 +46,7 @@ const Card = () => {
                 enabled
                   ? "bg-[color:hsl(174,86%,45%)]"
                   : "bg-[color:hsl(223,50%,87%)]"
-              } relative inline-flex h-6 w-11 items-center rounded-full`}
+              } relative inline-flex h-6 w-11 items-center rounded-full hover:opacity-90`}
             >
               <span
                 className={`${
@@ -53,73 +55,34 @@ const Card = () => {
               />
             </Switch>
           </div>
-          <p className="text-[15px] text-[color:hsl(225,20%,60%)]">
+          <p className="flex-shrink-0 text-[15px] text-[color:hsl(225,20%,60%)] dark:text-gray-300">
             Yearly Billing
           </p>
-          <p className="text-[13px] text-[color:hsl(15,100%,70%)] bg-[color:hsl(14,92%,95%)] rounded-full px-3 py-1 font-manrope font-bold">
-            {discount}% Discount
+          <p className="flex items-center rounded-full bg-[color:hsl(14,92%,95%)] px-3 py-1 font-manrope text-xs font-bold text-[color:hsl(15,100%,70%)] lg:gap-x-2">
+            <span className="lg:hidden">-</span>
+            <span>{discount}%</span>
+            <span className="hidden lg:block">Discount</span>
           </p>
         </div>
-        <hr className="mt-[50px] w-full"></hr>
-        <div className="flex flex-col md lg xl:flex-row justify-between items-center">
-          <div>
-            <ul className="mt-6">
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  className="flex-shrink-0"
-                >
-                  <path
-                    fill="none"
-                    stroke="#10D8C4"
-                    strokeWidth="2"
-                    d="M1 4.134l1.907 1.908L7.949 1"
-                  />
-                </svg>
-                <span>Unlimited Website</span>
-              </li>
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  className="flex-shrink-0"
-                >
-                  <path
-                    fill="none"
-                    stroke="#10D8C4"
-                    strokeWidth="2"
-                    d="M1 4.134l1.907 1.908L7.949 1"
-                  />
-                </svg>
-                <span>100% data ownership</span>
-              </li>
-              <li className="flex flex-row gap-4 text-[color:hsl(225,20%,60%)] text-[15px] font-manrope items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  className="flex-shrink-0"
-                >
-                  <path
-                    fill="none"
-                    stroke="#10D8C4"
-                    strokeWidth="2"
-                    d="M1 4.134l1.907 1.908L7.949 1"
-                  />
-                </svg>
-                <span>Email reports</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <button className="w-[200px] font-bold px-2 py-5 bg-[color:hsl(227,35%,25%)] text-[color:hsl(226,100%,87%)] rounded-full hover:ring-1 hover:ring-offset-1 lg:hover:bg-white lg:hover:text-black m-6">
-              Start my trial
-            </button>
-          </div>
-        </div>
+      </div>
+      <hr className="mt-[50px] w-full dark:border-gray-600"></hr>
+      <div className="mt-10 flex flex-col items-center justify-between gap-y-6 px-6 lg:flex-row lg:px-12">
+        <ul className="space-y-2 font-manrope text-[15px] text-[color:hsl(225,20%,60%)] dark:text-gray-300">
+          <li className="flex flex-row items-center justify-center gap-4  lg:justify-start ">
+            <CheckmarkIcon /> <span>Unlimited Website</span>
+          </li>
+          <li className="flex flex-row items-center justify-center gap-4   lg:justify-start">
+            <CheckmarkIcon /> <span>100% data ownership</span>
+          </li>
+          <li className="flex flex-row items-center justify-center gap-4  lg:justify-start">
+            <CheckmarkIcon />
+            <span>Email reports</span>
+          </li>
+        </ul>
+
+        <button className="rounded-full bg-[color:hsl(227,35%,25%)] px-12 py-4  font-bold text-[color:hsl(226,100%,87%)] hover:ring-1 hover:ring-offset-1 dark:bg-blue-600 dark:text-white lg:hover:bg-white lg:hover:text-black">
+          Start my trial
+        </button>
       </div>
     </div>
   );

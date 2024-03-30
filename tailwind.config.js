@@ -12,7 +12,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        "bg-pattern": "url('/src/assets/bg-pattern.svg')",
+        "bg-pattern": "url('/bg-pattern.svg')",
       },
     },
     darkMode: "class",
