@@ -5,14 +5,6 @@ import Card from "./Card";
 function App() {
   const [theme, setTheme] = useState<string>("light");
 
-  // useEffect(() => {
-  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -30,7 +22,7 @@ function App() {
       <div className="absolute z-0  h-1/2 w-full rounded-bl-[5rem] bg-[#F1F5FE] dark:bg-gray-900 lg:rounded-bl-[15rem]"></div>
       <div className="relative z-10 min-h-screen">
         <button
-          className="z-50 m-2 rounded-lg bg-transparent p-4 hover:bg-gray-300"
+          className="z-50 m-2 rounded-full bg-transparent p-4 hover:bg-gray-300"
           onClick={handleThemeSwitch}
         >
           {theme === "dark" ? (
