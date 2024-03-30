@@ -11,7 +11,7 @@ const Card = () => {
     setSliderValue(value);
   };
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 ">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="p-8 bg-white rounded-xl mt-6 mb-6 shadow-md w-full max-w-[20rem] md:max-w-md lg:max-w-[40rem] xl:max-w-[40rem] transform transition-transform duration-500">
         <div className="flex flex-col md:lg:flex-row justify-between items-center">
           <div className="text-[color:hsl(225,20%,60%)] font-semibold font-manrope">
