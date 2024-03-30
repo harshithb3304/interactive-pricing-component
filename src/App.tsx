@@ -96,7 +96,7 @@ function App() {
             <p>No credit card required</p>
           </div>
         </div>
-        <div className="mt-24 px-6 pb-24 lg:pb-0 lg:px-0">
+        <div className="mt-24 px-6 pb-24 md:pb-20 lg:px-0 lg:pb-0">
           <Card />
         </div>
       </div>
