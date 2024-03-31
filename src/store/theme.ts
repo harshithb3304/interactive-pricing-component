@@ -3,7 +3,7 @@ export interface ToggleThemeState {
     value: "dark"|"light"
 }
 
-const initialState: ToggleThemeState = {value:"dark"}
+const initialState: ToggleThemeState = {value:"light"}
 export const themeSlice = createSlice({
     name: "toggleTheme",
     initialState,
