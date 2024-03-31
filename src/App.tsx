@@ -1,10 +1,13 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import Card from "./Card";
+import { useEffect } from "react";
+import Card from "./components/Card";
+
+import { toggleTheme } from "./store/theme";
+import { useAppDispatch, useAppSelector } from "./store/hooks";
 
 function App() {
-  const [theme, setTheme] = useState<string>("light");
-
+  const theme = useAppSelector((state) => state.themeToggle.value);
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -14,7 +17,7 @@ function App() {
   }, [theme]);
 
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    dispatch(toggleTheme());
   };
 
   return (
@@ -55,9 +58,9 @@ function App() {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M12 21a9 9 0 0 1-.5-17.986V3c-.354.966-.5 1.911-.5 3a9 9 0 0 0 9 9c.239 0 .254.018.488 0A9.004 9.004 0 0 1 12 21Z"
                 />
               </svg>
@@ -73,14 +76,14 @@ function App() {
           >
             <g
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               className="stroke-[#CFD8EF] dark:stroke-gray-700"
             >
               <circle cx="63" cy="82" r="62.5" />
               <circle cx="105" cy="41" r="40.5" />
             </g>
           </svg>
-          <h1 className="mb-3 flex items-center justify-center font-manrope  text-2xl font-bold dark:text-white  md:text-3xl lg:text-4xl">
+          <h1 className="loading-screen mb-3 flex items-center justify-center font-manrope  text-2xl font-bold dark:text-white  md:text-3xl lg:text-4xl">
             Simple, traffic-based pricing
           </h1>
           <div className="flex flex-col items-center justify-center font-manrope text-xl font-semibold text-[color:hsl(225,20%,60%)] md:text-xl lg:flex-row  lg:text-xl">

@@ -1,16 +1,25 @@
-import { useState } from "react";
 import Slider from "./Slider";
 import { Switch } from "@headlessui/react";
 import CheckmarkIcon from "./CheckmarkIcon";
 
+import { setValue } from "../store/slider";
+import { toggle } from "../store/billingToggle";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+
 const Card = () => {
-  const [sliderValue, setSliderValue] = useState<number>(50);
-  const [enabled, setEnabled] = useState(false);
+  const sliderValue = useAppSelector((state) => state.slider.value);
+  const dispatch = useAppDispatch();
+  const enabled = useAppSelector((state) => state.billingToggle.value);
   const discount: number = 25;
 
   const handleSliderChange = (value: number) => {
-    setSliderValue(value);
+    dispatch(setValue(value));
   };
+
+  const handleToggleChange = () => {
+    dispatch(toggle());
+  };
+
   return (
     <div className="mx-auto w-full max-w-screen-sm transform rounded-xl bg-white py-8 shadow-md transition-transform duration-500 dark:bg-gray-700 lg:py-12">
       <div className="px-6 lg:px-12">
@@ -41,7 +50,7 @@ const Card = () => {
           <div className="md:flex">
             <Switch
               checked={enabled}
-              onChange={setEnabled}
+              onChange={handleToggleChange}
               className={`${
                 enabled
                   ? "bg-[color:hsl(174,86%,45%)]"

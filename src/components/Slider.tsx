@@ -42,6 +42,9 @@ const Slider: React.FC<SliderProps> = ({ value, onChange }) => {
         input[type="range"]::-webkit-slider-thumb:active{
           background-color:hsl(174, 86%, 45%) ;
         }
+        .dark input[type="range"]::-webkit-slider-thumb {
+          box-shadow: 0 15px 15px transparent;
+        }
       `}</style>
     </div>
   );
