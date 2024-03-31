@@ -1,18 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 export interface BillingToggleState {
-    value: boolean
+  value: boolean;
 }
-const initialState: BillingToggleState = {value:false}
+const initialState: BillingToggleState = { value: false };
 
 export const billingToggleSlice = createSlice({
-    name: "billingToggle",
-    initialState,
-    reducers: {
-        toggle : (state) => {
-            state.value = !state.value
-        }
-    }
-})
+  name: "billingToggle",
+  initialState,
+  reducers: {
+    toggle: (state) => {
+      state.value = !state.value;
+    },
+  },
+});
 
-export const {toggle} = billingToggleSlice.actions;
-export default billingToggleSlice.reducer; 
+export const { toggle } = billingToggleSlice.actions;
+export default billingToggleSlice.reducer;
